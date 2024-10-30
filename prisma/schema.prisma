@@ -9,11 +9,16 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
 
-// model X {}
+model Topic {
+  id Int @id @default(autoincrement())
+  tema String 
+  voto Int @default(0)
+  
+}
 // 4. Aplica las migraciones para sincronizar tu esquema con la base de datos
 // 5.Genera el cliente de Prisma
