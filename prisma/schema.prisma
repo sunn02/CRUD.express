@@ -16,8 +16,8 @@ datasource db {
 
 model Topic {
   id Int @id @default(autoincrement())
-  tema String 
-  voto Int @default(0)
+  title String 
+  vote Int @default(0)
   
 }
 // 4. Aplica las migraciones para sincronizar tu esquema con la base de datos
