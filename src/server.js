@@ -4,7 +4,7 @@ const ejs = require('ejs');
 const methodOverride = require('method-override');
 const route = require('./routes/route');
 const app = express();
-const PORT = 8000;
+const PORT = 8001;
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
