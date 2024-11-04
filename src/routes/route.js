@@ -9,6 +9,6 @@ router.get("/", Controller.getAllTopics);
 router.post("/", Controller.createTopic);
 router.patch('/:id/update', Controller.updateTopic);
 router.delete("/:id", Controller.deleteTopic);
-router.post('/vote/:id', Controller.voteTopic)
+router.post('/vote/:id', Controller.voteTopic);
 
 module.exports = router;

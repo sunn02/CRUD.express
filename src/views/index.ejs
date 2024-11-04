@@ -10,15 +10,24 @@
     <h1>Temas Disponibles</h1>
     <ul>
         <% topics.forEach(topic => { %>
-            <li><%= topic.title %>
-                <form action="/topics/<%= topic.id %>/update" method="POST" style="display: inline;">
-                    <input type="hidden" name="_method" value="PATCH">
+            <li><%= topic.title %> - Votos: <%= topic.vote || 0 %>
+                <form action="/topics/vote/<%= topic.id %>" method="post">
+                    <button type="submit">Votar</button>
+                </form>
+
+                <form action="/topics/<%= topic.id %>/update?_method=PATCH" method="POST" style="display: inline;">
                     <input type="text" name="topic" placeholder="New topic name" required>
                     <button type="submit">Update</button>
                 </form>
+                
+                <form action="/topics/<%= topic.id %>?_method=DELETE" method="POST" style="display: inline;">
+                    <button type="submit">Delete</button>
+                </form>
+
             </li>
         <% }); %>
     </ul>
+    
 
     <h2>Crear un Nuevo Tema</h2>
     <form action="/topics" method="POST">
