@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Sistema de Votación</title>
+    <script src="/script.js" defer></script>
 </head>
 <body>
     <h1>Bienvenido al Sistema de Votación</h1>
@@ -10,8 +11,9 @@
     <h1>Temas Disponibles</h1>
     <ul>
         <% topics.forEach(topic => { %>
-            <li><%= topic.title %> - Votos: <%= topic.vote || 0 %>
-                <form action="/topics/vote/<%= topic.id %>" method="post">
+            <li><%= topic.title %> - Votos: <span id="voto-contador-<%= topic.id %>"><%= topic.vote || 0 %></span>
+
+                <form action="/topics/vote/<%= topic.id %>" method="post" class="voto-form">
                     <button type="submit">Votar</button>
                 </form>
 

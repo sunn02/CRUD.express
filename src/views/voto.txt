@@ -1,0 +1,4 @@
+<li><%= topic.title %> - Votos: <%= topic.vote || 0 %>
+        <form action="/topics/vote/<%= topic.id %>" method="post">
+                <button type="submit">Votar</button>
+        </form>
